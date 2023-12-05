@@ -12,7 +12,7 @@ public class TextParser
         {
             //7 bazillion japanese characters what the fuck
             /*"　", "ぁ", "あ", "ぃ", "い", "ぅ", "う", "ぇ", "え", "ぉ", "お", "か", "が", "き", "ぎ", "く", "ぐ", "け", "げ", "こ", "ご", "さ", "ざ", "し", "じ", "す", "ず",
-            "せ", "ぜ", "そ", "ぞ", "た", "だ", "ち", "ぢ", "っ", "つ", "づ", "て", "で", "ぜ", "ぜ", "ぜ", "ぜ", "ぜ", "ぜ", "ぜ", "ぜ", "ぜ", "ぜ", "ぜ", "ぜ", "ぜ", "ぜ",*/
+            "せ", "ぜ", "そ", "ぞ", "た", "だ", "ち", "ぢ", "っ", "つ", "づ", "て", "で", "ぜ", "ぜ", "ぜ", "ぜ", "ぜ", "ぜ", "ぜ", "ぜ", "ぜ", "ぜ", "ぜ", "ぜ", "ぜ", "ぜ", hey babe*/
             "！", "？", " ", "。", "...", ".", "/", " ", " ", " ", " ", "(", ")", "♂", "♀", "+", "-", "×", "÷", "=", "~", ":", ";", ".", ",",
             "♠", "♣", "♥", "♦", "★", " ", " ", " ", " ", " ", "@", "♪", "%", " ", " ", " ", " ", ":)", ":D", "D:", ">:(",
             " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "←", "↑", "↓", "→", "▶", "&",
@@ -52,12 +52,13 @@ public class TextParser
         for (int Counter = 0; Counter < TextData.Length - 2; Counter += 2)
         {
             if (BitConverter.ToUInt16(TextData, Counter) == 0xFFFF) { break; }
-            if ((BitConverter.ToUInt16(TextData, Counter) - FirstCharID) >= ConversionTable.Length) { OutputString += "🤡"; continue; }
+            if ((BitConverter.ToUInt16(TextData, Counter) - FirstCharID) >= ConversionTable.Length) { OutputString += "🤡L"; continue; }
 
             OutputString += ConversionTable[BitConverter.ToUInt16(TextData, Counter) - FirstCharID];
         }
 
 
+        return OutputString;
         return OutputString;
     }
 }
