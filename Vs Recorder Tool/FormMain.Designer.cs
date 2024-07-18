@@ -1331,7 +1331,7 @@ namespace Vs_Recorder_Tool
             this.Controls.Add(this.ProgramTabs);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMain";
-            this.Text = "Vs Recorder Tool 1.0";
+            this.Text = "Vs Recorder Tool 1.1";
             this.TabRNG.ResumeLayout(false);
             this.TabRNG.PerformLayout();
             this.TabBattleVideoManager.ResumeLayout(false);
