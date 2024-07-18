@@ -67,31 +67,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FuncFileHandlers.cs" />
     <Compile Include="FuncFormMain.cs" />
     <Compile Include="FuncSaveReader.cs" />
-    <Compile Include="BoxUpload.cs" />
-    <Compile Include="FuncBattleVideoPokemonParser.cs" />
-    <Compile Include="ClassBoxUploadPokemon.cs" />
+    <Compile Include="FuncPokemonParser.cs" />
     <Compile Include="FuncTextParser.cs" />
-    <Compile Include="ResFrontSprites4.Designer.cs">
+    <Compile Include="FuncVideoImporter.cs" />
+    <Compile Include="ResSpritesFrontNormal4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ResFrontSprites4.resx</DependentUpon>
+      <DependentUpon>ResSpritesFrontNormal4.resx</DependentUpon>
     </Compile>
-    <Compile Include="ResFrontSprites4Shiny.Designer.cs">
+    <Compile Include="ResSpritesFrontShiny4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ResFrontSprites4Shiny.resx</DependentUpon>
+      <DependentUpon>ResSpritesFrontShiny4.resx</DependentUpon>
     </Compile>
-    <Compile Include="ResFrontSprites5.Designer.cs">
+    <Compile Include="ResSpritesFrontNormal5.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ResFrontSprites5.resx</DependentUpon>
+      <DependentUpon>ResSpritesFrontNormal5.resx</DependentUpon>
     </Compile>
-    <Compile Include="ResFrontSprites5Shiny.Designer.cs">
+    <Compile Include="ResSpritesFrontShiny5.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ResFrontSprites5Shiny.resx</DependentUpon>
+      <DependentUpon>ResSpritesFrontShiny5.resx</DependentUpon>
     </Compile>
     <Compile Include="FormGameSelect.cs">
       <SubType>Form</SubType>
@@ -104,18 +104,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResIcons.resx</DependentUpon>
     </Compile>
-    <Compile Include="ResItemSprites.Designer.cs">
+    <Compile Include="ResSpritesItems.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ResItemSprites.resx</DependentUpon>
+      <DependentUpon>ResSpritesItems.resx</DependentUpon>
     </Compile>
-    <Compile Include="ResMenuSprites.Designer.cs">
+    <Compile Include="ResSpritesMenu.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ResMenuSprites.resx</DependentUpon>
+      <DependentUpon>ResSpritesMenu.resx</DependentUpon>
     </Compile>
     <Compile Include="FuncPokemonSprites.cs" />
-    <Compile Include="FuncZReserved.cs" />
+    <Compile Include="GuiFormMain.cs" />
     <Compile Include="ClassBattleVideoPokemon.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -123,27 +123,32 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FuncGeneric.cs" />
+    <Compile Include="FuncGlobal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResSpritesSpecial.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResSpritesSpecial.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ResFrontSprites4.resx">
+    <EmbeddedResource Include="ResSpritesFrontNormal4.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResFrontSprites4.Designer.cs</LastGenOutput>
+      <LastGenOutput>ResSpritesFrontNormal4.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ResFrontSprites4Shiny.resx">
+    <EmbeddedResource Include="ResSpritesFrontShiny4.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResFrontSprites4Shiny.Designer.cs</LastGenOutput>
+      <LastGenOutput>ResSpritesFrontShiny4.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ResFrontSprites5.resx">
+    <EmbeddedResource Include="ResSpritesFrontNormal5.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResFrontSprites5.Designer.cs</LastGenOutput>
+      <LastGenOutput>ResSpritesFrontNormal5.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ResFrontSprites5Shiny.resx">
+    <EmbeddedResource Include="ResSpritesFrontShiny5.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResFrontSprites5Shiny.Designer.cs</LastGenOutput>
+      <LastGenOutput>ResSpritesFrontShiny5.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGameSelect.resx">
       <DependentUpon>FormGameSelect.cs</DependentUpon>
@@ -152,13 +157,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResIcons.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ResItemSprites.resx">
+    <EmbeddedResource Include="ResSpritesItems.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResItemSprites.Designer.cs</LastGenOutput>
+      <LastGenOutput>ResSpritesItems.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ResMenuSprites.resx">
+    <EmbeddedResource Include="ResSpritesMenu.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResMenuSprites.Designer.cs</LastGenOutput>
+      <LastGenOutput>ResSpritesMenu.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -170,6 +175,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ResSpritesSpecial.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResSpritesSpecial.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

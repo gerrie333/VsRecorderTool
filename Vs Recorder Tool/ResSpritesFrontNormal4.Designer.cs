@@ -22,14 +22,14 @@ namespace Vs_Recorder_Tool {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ResFrontSprites4 {
+    internal class ResSpritesFrontNormal4 {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ResFrontSprites4() {
+        internal ResSpritesFrontNormal4() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Vs_Recorder_Tool {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Vs_Recorder_Tool.ResFrontSprites4", typeof(ResFrontSprites4).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Vs_Recorder_Tool.ResSpritesFrontNormal4", typeof(ResSpritesFrontNormal4).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -1203,9 +1203,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201 {
+        internal static System.Drawing.Bitmap _201_0 {
             get {
-                object obj = ResourceManager.GetObject("_201", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_0", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1213,9 +1213,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_a {
+        internal static System.Drawing.Bitmap _201_1 {
             get {
-                object obj = ResourceManager.GetObject("_201_a", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1223,9 +1223,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_b {
+        internal static System.Drawing.Bitmap _201_10 {
             get {
-                object obj = ResourceManager.GetObject("_201_b", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1233,9 +1233,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_c {
+        internal static System.Drawing.Bitmap _201_11 {
             get {
-                object obj = ResourceManager.GetObject("_201_c", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_11", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1243,9 +1243,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_d {
+        internal static System.Drawing.Bitmap _201_12 {
             get {
-                object obj = ResourceManager.GetObject("_201_d", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_12", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1253,9 +1253,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_e {
+        internal static System.Drawing.Bitmap _201_13 {
             get {
-                object obj = ResourceManager.GetObject("_201_e", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_13", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1263,9 +1263,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_exclamation {
+        internal static System.Drawing.Bitmap _201_14 {
             get {
-                object obj = ResourceManager.GetObject("_201_exclamation", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_14", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1273,9 +1273,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_f {
+        internal static System.Drawing.Bitmap _201_15 {
             get {
-                object obj = ResourceManager.GetObject("_201_f", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_15", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1283,9 +1283,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_g {
+        internal static System.Drawing.Bitmap _201_16 {
             get {
-                object obj = ResourceManager.GetObject("_201_g", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1293,9 +1293,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_h {
+        internal static System.Drawing.Bitmap _201_17 {
             get {
-                object obj = ResourceManager.GetObject("_201_h", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_17", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1303,9 +1303,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_i {
+        internal static System.Drawing.Bitmap _201_18 {
             get {
-                object obj = ResourceManager.GetObject("_201_i", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_18", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1313,9 +1313,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_j {
+        internal static System.Drawing.Bitmap _201_19 {
             get {
-                object obj = ResourceManager.GetObject("_201_j", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_19", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1323,9 +1323,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_k {
+        internal static System.Drawing.Bitmap _201_2 {
             get {
-                object obj = ResourceManager.GetObject("_201_k", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1333,9 +1333,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_l {
+        internal static System.Drawing.Bitmap _201_20 {
             get {
-                object obj = ResourceManager.GetObject("_201_l", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_20", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1343,9 +1343,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_m {
+        internal static System.Drawing.Bitmap _201_21 {
             get {
-                object obj = ResourceManager.GetObject("_201_m", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_21", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1353,9 +1353,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_n {
+        internal static System.Drawing.Bitmap _201_22 {
             get {
-                object obj = ResourceManager.GetObject("_201_n", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_22", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1363,9 +1363,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_o {
+        internal static System.Drawing.Bitmap _201_23 {
             get {
-                object obj = ResourceManager.GetObject("_201_o", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_23", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1373,9 +1373,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_p {
+        internal static System.Drawing.Bitmap _201_24 {
             get {
-                object obj = ResourceManager.GetObject("_201_p", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1383,9 +1383,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_q {
+        internal static System.Drawing.Bitmap _201_25 {
             get {
-                object obj = ResourceManager.GetObject("_201_q", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_25", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1393,9 +1393,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_question {
+        internal static System.Drawing.Bitmap _201_26 {
             get {
-                object obj = ResourceManager.GetObject("_201_question", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1403,9 +1403,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_r {
+        internal static System.Drawing.Bitmap _201_27 {
             get {
-                object obj = ResourceManager.GetObject("_201_r", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_27", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1413,9 +1413,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_s {
+        internal static System.Drawing.Bitmap _201_3 {
             get {
-                object obj = ResourceManager.GetObject("_201_s", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1423,9 +1423,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_t {
+        internal static System.Drawing.Bitmap _201_4 {
             get {
-                object obj = ResourceManager.GetObject("_201_t", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1433,9 +1433,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_u {
+        internal static System.Drawing.Bitmap _201_5 {
             get {
-                object obj = ResourceManager.GetObject("_201_u", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1443,9 +1443,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_v {
+        internal static System.Drawing.Bitmap _201_6 {
             get {
-                object obj = ResourceManager.GetObject("_201_v", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1453,9 +1453,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_w {
+        internal static System.Drawing.Bitmap _201_7 {
             get {
-                object obj = ResourceManager.GetObject("_201_w", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_7", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1463,9 +1463,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_x {
+        internal static System.Drawing.Bitmap _201_8 {
             get {
-                object obj = ResourceManager.GetObject("_201_x", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_8", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1473,19 +1473,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _201_y {
+        internal static System.Drawing.Bitmap _201_9 {
             get {
-                object obj = ResourceManager.GetObject("_201_y", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _201_z {
-            get {
-                object obj = ResourceManager.GetObject("_201_z", resourceCulture);
+                object obj = ResourceManager.GetObject("_201_9", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -3553,16 +3543,6 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _386 {
-            get {
-                object obj = ResourceManager.GetObject("_386", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _386_0 {
             get {
                 object obj = ResourceManager.GetObject("_386_0", resourceCulture);
@@ -3893,9 +3873,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _412 {
+        internal static System.Drawing.Bitmap _412_0 {
             get {
-                object obj = ResourceManager.GetObject("_412", resourceCulture);
+                object obj = ResourceManager.GetObject("_412_0", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -3903,9 +3883,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _412_plant {
+        internal static System.Drawing.Bitmap _412_1 {
             get {
-                object obj = ResourceManager.GetObject("_412_plant", resourceCulture);
+                object obj = ResourceManager.GetObject("_412_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -3913,9 +3893,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _412_sandy {
+        internal static System.Drawing.Bitmap _412_2 {
             get {
-                object obj = ResourceManager.GetObject("_412_sandy", resourceCulture);
+                object obj = ResourceManager.GetObject("_412_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -3923,9 +3903,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _412_trash {
+        internal static System.Drawing.Bitmap _413_0 {
             get {
-                object obj = ResourceManager.GetObject("_412_trash", resourceCulture);
+                object obj = ResourceManager.GetObject("_413_0", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -3933,9 +3913,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _413 {
+        internal static System.Drawing.Bitmap _413_1 {
             get {
-                object obj = ResourceManager.GetObject("_413", resourceCulture);
+                object obj = ResourceManager.GetObject("_413_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -3943,29 +3923,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _413_plant {
+        internal static System.Drawing.Bitmap _413_2 {
             get {
-                object obj = ResourceManager.GetObject("_413_plant", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _413_sandy {
-            get {
-                object obj = ResourceManager.GetObject("_413_sandy", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _413_trash {
-            get {
-                object obj = ResourceManager.GetObject("_413_trash", resourceCulture);
+                object obj = ResourceManager.GetObject("_413_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -4063,29 +4023,9 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _421_overcast {
-            get {
-                object obj = ResourceManager.GetObject("_421_overcast", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _421_sunshine {
             get {
                 object obj = ResourceManager.GetObject("_421_sunshine", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _422 {
-            get {
-                object obj = ResourceManager.GetObject("_422", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -4106,16 +4046,6 @@ namespace Vs_Recorder_Tool {
         internal static System.Drawing.Bitmap _422_1 {
             get {
                 object obj = ResourceManager.GetObject("_422_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _423 {
-            get {
-                object obj = ResourceManager.GetObject("_423", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -4883,16 +4813,6 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _487 {
-            get {
-                object obj = ResourceManager.GetObject("_487", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _487_0 {
             get {
                 object obj = ResourceManager.GetObject("_487_0", resourceCulture);
@@ -4963,16 +4883,6 @@ namespace Vs_Recorder_Tool {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _492 {
-            get {
-                object obj = ResourceManager.GetObject("_492", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _492_0 {
             get {
                 object obj = ResourceManager.GetObject("_492_0", resourceCulture);
@@ -4986,16 +4896,6 @@ namespace Vs_Recorder_Tool {
         internal static System.Drawing.Bitmap _492_1 {
             get {
                 object obj = ResourceManager.GetObject("_492_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _493 {
-            get {
-                object obj = ResourceManager.GetObject("_493", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

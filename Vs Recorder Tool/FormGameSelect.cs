@@ -16,16 +16,16 @@ namespace Vs_Recorder_Tool
         {InitializeComponent();}
 
         private void GameSelectButtonPt_CheckedChanged(object sender, EventArgs e)
-        { Functions.CurrentGame = 0; }
+        { Functions.CurrentGame = Game.Platinum; }
 
         private void GameSelectButtonHGSS_CheckedChanged(object sender, EventArgs e)
-        { Functions.CurrentGame = 1; }
+        { Functions.CurrentGame = Game.HeartgoldSoulsilver; }
 
         private void GameSelectButtonBW_CheckedChanged(object sender, EventArgs e)
-        { Functions.CurrentGame = 2; }
+        { Functions.CurrentGame = Game.BlackWhite; }
 
         private void GameSelectButtonB2W2_CheckedChanged(object sender, EventArgs e)
-        { Functions.CurrentGame = 3; }
+        { Functions.CurrentGame = Game.Black2White2; }
 
         private void GameSelectButtonContinue_Click(object sender, EventArgs e)
         { Close(); }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -11,62 +12,102 @@ namespace Vs_Recorder_Tool
 {
     public static class FuncFormMain
     {
-        //Updates Pokemon Team Previews
-        public static void UpdatePreviewPokemon(PictureBox[] BattlePartySlots)
+        //Action functions (for complex actions)
+        public static void OpenFileButton_Action(RadioButton[] VideoButtons, PictureBox[] BattlePartySlots, Button[] FileButtons)
         {
+            FileHandlers.OpenUserFile();
 
-            for (int Counter = 0; Counter < 12; Counter++)
+            string FileExtension = Functions.CurrentFilePath.Split('.').Last();
+            switch (FileExtension)
             {
-                BattlePartySlots[Counter].Enabled = false;
-                BattlePartySlots[Counter].Image = PokemonSprites.MenuSprite(Functions.PokemonList[Counter]);
+                //Save file -- Ask which game, track down ebv data and read it, decrypt it, view it
+                case "sav":
+                    if ((Functions.CurrentGame == Game.Platinum)||(Functions.CurrentGame == Game.HeartgoldSoulsilver)) { SaveReader.ReadFromSaveFile4(); } else { SaveReader.ReadFromSaveFile5(); };
+                    SaveReader.DecryptBattleVideos(0xF);
+                    GuiFormMain.UpdateBattleVideoSlots(VideoButtons);
+                    GuiFormMain.ClearPreviewPokemon(BattlePartySlots);
+                    FileButtons[1].Enabled = true;
+                    if ((Functions.CurrentGame == Game.Black2White2) || (Functions.CurrentGame == Game.BlackWhite)) { FileButtons[2].Enabled = true; } else { FileButtons[2].Enabled = false; };
+                    break;
 
-                if (Functions.PokemonList[Counter].SpeciesID != 0)
-                {
-                    BattlePartySlots[Counter].Enabled = true;
-                }
+                //EBV4 -- decrypt it, view it
+                case "ebv4":
+                    Functions.CurrentGame = Game.HeartgoldSoulsilver;
+
+                    if (Functions.EncryptedVideoList[0] == null) { Functions.EncryptedVideoList[0] = new byte[Functions.BattleVideoLength4];  }
+                    SaveReader.ReadBattleVideoFile(ref Functions.EncryptedVideoList[0]);
+
+                    SaveReader.DecryptBattleVideos(0x1);
+                    GuiFormMain.UpdateBattleVideoSlots(VideoButtons);
+                    VideoButtons[0].Checked = true; //checks the button and triggers the UpdatePreviewPokemon function
+                    FileButtons[1].Enabled = true;
+                    FileButtons[2].Enabled = false;
+                    break;
+
+                //EBV5
+                case "ebv5":
+                    Functions.CurrentGame = Game.Black2White2;
+
+                    if (Functions.EncryptedVideoList[0] == null) { Functions.EncryptedVideoList[0] = new byte[Functions.BattleVideoLength5]; }
+                    SaveReader.ReadBattleVideoFile(ref Functions.EncryptedVideoList[0]);
+
+                    SaveReader.DecryptBattleVideos(0x1);
+                    GuiFormMain.UpdateBattleVideoSlots(VideoButtons);
+                    VideoButtons[0].Checked = true; //checks the button and triggers the UpdatePreviewPokemon function
+                    FileButtons[1].Enabled = true;
+                    FileButtons[2].Enabled = false;
+                    break;
+
+
+                //DBV4 -- view it
+                case "dbv4":
+                    Functions.CurrentGame = Game.HeartgoldSoulsilver;
+
+                    if (Functions.DecryptedVideoList[0] == null) { Functions.DecryptedVideoList[0] = new byte[Functions.BattleVideoLength4]; }
+                    SaveReader.ReadBattleVideoFile(ref Functions.DecryptedVideoList[0]);
+
+                    GuiFormMain.UpdateBattleVideoSlots(VideoButtons);
+                    VideoButtons[0].Checked = true; //checks the button and triggers the UpdatePreviewPokemon function
+                    FileButtons[1].Enabled = false;
+                    FileButtons[2].Enabled = false;
+                    break;
+
+                //DBV5 -- view it
+                case "dbv5":
+                    Functions.CurrentGame = Game.Black2White2;
+
+                    if (Functions.DecryptedVideoList[0] == null) { Functions.DecryptedVideoList[0] = new byte[Functions.BattleVideoLength5]; }
+                    SaveReader.ReadBattleVideoFile(ref Functions.DecryptedVideoList[0]);
+
+                    GuiFormMain.UpdateBattleVideoSlots(VideoButtons);
+                    VideoButtons[0].Checked = true; //checks the button and triggers the UpdatePreviewPokemon function
+                    FileButtons[1].Enabled = false;
+                    FileButtons[2].Enabled = false;
+                    break;
+
+                case "ebv":
+                    Functions.CurrentGame = Game.Black2White2;
+
+                    if (Functions.EncryptedVideoList[0] == null) { Functions.EncryptedVideoList[0] = new byte[Functions.BattleVideoLength5]; }
+                    SaveReader.ReadBattleVideoFile(ref Functions.EncryptedVideoList[0]);
+
+                    SaveReader.ExtendLegacyEBV(0x0);
+                    SaveReader.DecryptBattleVideos(0x1);
+                    GuiFormMain.UpdateBattleVideoSlots(VideoButtons);
+                    VideoButtons[0].Checked = true; //checks the button and triggers the UpdatePreviewPokemon function
+                    FileButtons[1].Enabled = true;
+                    FileButtons[2].Enabled = false;
+                    break;
             }
         }
 
-
-        //Fills out the info boxes with the specified pokemon's data.
-        public static void SetCurrentPokemon(int PokemonSlot, PictureBox[] Panel1Sprites, Label[] Panel1Text, Label[] Panel2Text, Label[] Panel3Text, Label[] Panel4Text)
+        public static void VideoRadioButton_Action(RadioButton VideoButton, int VideoNumber, PictureBox[] BattlePartySlots)
         {
-            //Panel 1: Pokemon Overview
-            Panel1Text[0].Text = Functions.PokemonList[PokemonSlot].Nickname;
-            Panel1Text[1].Text = Functions.PokemonList[PokemonSlot].Species;
-            Panel1Text[2].Text = Functions.PokemonList[PokemonSlot].HoldItem;
-            Panel1Sprites[0].BackgroundImage = PokemonSprites.FrontSprite(Functions.PokemonList[PokemonSlot]);
-            Panel1Sprites[0].Image = PokemonSprites.HoldItemSprite(Functions.PokemonList[PokemonSlot].HoldItemID);
-            Panel1Sprites[1].Image = PokemonSprites.PokeBallSprite(Functions.PokemonList[PokemonSlot].PokeBall);
-            Panel1Sprites[2].Image = (Bitmap)ResIcons.ResourceManager.GetObject("_flags_" + Convert.ToString(Functions.PokemonList[PokemonSlot].Nationality));
+            if (VideoButton.Checked == false) { return; }
 
-
-            //Panel 2; Summary info
-            Panel2Text[0].Text = Functions.PokemonList[PokemonSlot].PIDBytes;
-            Panel2Text[1].Text = Functions.PokemonList[PokemonSlot].Nature;
-            Panel2Text[2].Text = "Level " + Functions.PokemonList[PokemonSlot].Level;
-            Panel2Text[3].Text = "Experience: " + Functions.PokemonList[PokemonSlot].Experience;
-            Panel2Text[4].Text = "Ability: " + Functions.PokemonList[PokemonSlot].Ability;
-            Panel2Text[5].Text = "Friendship: " + Functions.PokemonList[PokemonSlot].Friendship;
-            Panel2Text[6].Text = Convert.ToString(Functions.PokemonList[PokemonSlot].OTName + " " + Functions.PokemonList[PokemonSlot].TrainerID) + "/" + Convert.ToString(Functions.PokemonList[PokemonSlot].SecretID);
-
-
-            //Panel 3: Stats, EVs and IVs
-            for (int Counter = 0; Counter < 6; Counter++)
-            {
-                Panel3Text[Counter].Text = Functions.PokemonList[PokemonSlot].Stats[Counter];
-                Panel3Text[Counter + 6].Text = Functions.PokemonList[PokemonSlot].EVs[Counter];
-                Panel3Text[Counter + 12].Text = Functions.PokemonList[PokemonSlot].IVs[Counter];
-            }
-
-
-            //Panel 4: Moves and PP
-            for (int Counter = 0; Counter < 4; Counter++)
-            {
-                Panel4Text[Counter].Text = Functions.PokemonList[PokemonSlot].Moves[Counter];
-                Panel4Text[Counter + 4].Text = Functions.PokemonList[PokemonSlot].PP[Counter] + "/" + Functions.PokemonList[PokemonSlot].PPUps[Counter];
-            }
-
+            Functions.CurrentBattleVideo = VideoNumber;
+            PokemonParser.ParseBattleVideoPokemon(VideoNumber);
+            GuiFormMain.UpdatePreviewPokemon(BattlePartySlots);
         }
     }
 }

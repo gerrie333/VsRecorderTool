@@ -15,13 +15,14 @@ namespace Vs_Recorder_Tool
 {
     public partial class FormMain : Form
     {
-        RadioButton[] VideoRadioButtons;
-        PictureBox[] BattlePartySlots;
-        PictureBox[] PokemonPanel1Sprites;
-        Label[] PokemonPanel1Text;
-        Label[] PokemonPanel2Text;
-        Label[] PokemonPanel3Text;
-        Label[] PokemonPanel4Text;
+        static RadioButton[] VideoRadioButtons;
+        static PictureBox[] BattlePartySlots;
+        static PictureBox[] PokemonPanel1Sprites;
+        static Label[] PokemonPanel1Text;
+        static Label[] PokemonPanel2Text;
+        static Label[] PokemonPanel3Text;
+        static Label[] PokemonPanel4Text;
+        static Button[] FileButtons;
 
         public FormMain()
         {
@@ -33,86 +34,69 @@ namespace Vs_Recorder_Tool
             PokemonPanel2Text = new Label[] { TextPID, TextNature, TextLevel, TextExperience, TextAbility, TextFriendship, TextTrainer };
             PokemonPanel3Text = new Label[] { TextHPStat, TextAttackStat, TextDefenseStat, TextSpeedStat, TextSpecialAttackStat, TextSpecialDefenseStat, TextHPEVs, TextAttackEVs, TextDefenseEVs, TextSpeedEVs, TextSpecialAttackEVs, TextSpecialDefenseEVs, TextHPIVs, TextAttackIVs, TextDefenseIVs, TextSpeedIVs, TextSpecialAttackIVs, TextSpecialDefenseIVs };
             PokemonPanel4Text = new Label[] { TextMove1, TextMove2, TextMove3, TextMove4, TextMove1PP, TextMove2PP, TextMove3PP, TextMove4PP };
+            FileButtons = new Button[] { ButtonOpenFile, ButtonExport, ButtonImport };
         }
 
         //Battle Video Pokemon Tab
         //Opens the Battle Video Pokemon file and loads the data.
         private void OpenFileButton_Click(object sender, EventArgs e)
-        {
-            SaveReader.OpenUserFile(VideoRadioButtons, BattlePartySlots);
-        }
-
+        { FuncFormMain.OpenFileButton_Action(VideoRadioButtons, BattlePartySlots, FileButtons); }
 
         private void VideoExportButton_Click(object sender, EventArgs e)
-        {
-            SaveReader.ExportBattleVideo(Functions.CurrentBattleVideo);
-        }
+        { FileHandlers.ExportBattleVideo(Functions.CurrentBattleVideo); }
+
+        private void ButtonImport_Click(object sender, EventArgs e)
+        { VideoImporter.ImportBattleVideo5(); }
 
         //Selects Battle Video.
         private void PersonalVideoRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            Functions.CurrentBattleVideo = 0;
-            BattleVideoPokemonParser.OpenBattleVideoPokemonFile(0);
-            FuncFormMain.UpdatePreviewPokemon(BattlePartySlots);
-        }
+        { FuncFormMain.VideoRadioButton_Action((RadioButton)sender, 0, BattlePartySlots); }
 
         private void Video1RadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            Functions.CurrentBattleVideo = 1;
-            BattleVideoPokemonParser.OpenBattleVideoPokemonFile(1);
-            FuncFormMain.UpdatePreviewPokemon(BattlePartySlots);
-        }
+        { FuncFormMain.VideoRadioButton_Action((RadioButton)sender, 1, BattlePartySlots); }
 
         private void Video2RadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            Functions.CurrentBattleVideo = 2;
-            BattleVideoPokemonParser.OpenBattleVideoPokemonFile(2);
-            FuncFormMain.UpdatePreviewPokemon(BattlePartySlots);
-        }
+        { FuncFormMain.VideoRadioButton_Action((RadioButton)sender, 2, BattlePartySlots); }
 
         private void Video3RadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            Functions.CurrentBattleVideo = 3;
-            BattleVideoPokemonParser.OpenBattleVideoPokemonFile(3);
-            FuncFormMain.UpdatePreviewPokemon(BattlePartySlots);
-        }
+        { FuncFormMain.VideoRadioButton_Action((RadioButton)sender, 3, BattlePartySlots); }
 
         //Selects the Pokemon
         private void OpponentPartySlot1_Click(object sender, EventArgs e)
-        { FuncFormMain.SetCurrentPokemon(0, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
+        { GuiFormMain.UpdateCurrentPokemon(0, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
 
         private void OpponentPartySlot2_Click(object sender, EventArgs e)
-        { FuncFormMain.SetCurrentPokemon(1, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
+        { GuiFormMain.UpdateCurrentPokemon(1, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
 
         private void OpponentPartySlot3_Click(object sender, EventArgs e)
-        { FuncFormMain.SetCurrentPokemon(2, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
+        { GuiFormMain.UpdateCurrentPokemon(2, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
 
         private void OpponentPartySlot4_Click(object sender, EventArgs e)
-        { FuncFormMain.SetCurrentPokemon(3, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
+        { GuiFormMain.UpdateCurrentPokemon(3, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
 
         private void OpponentPartySlot5_Click(object sender, EventArgs e)
-        { FuncFormMain.SetCurrentPokemon(4, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
+        { GuiFormMain.UpdateCurrentPokemon(4, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
 
         private void OpponentPartySlot6_Click(object sender, EventArgs e)
-        { FuncFormMain.SetCurrentPokemon(5, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
+        { GuiFormMain.UpdateCurrentPokemon(5, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
 
         private void PlayerPartySlot1_Click(object sender, EventArgs e)
-        { FuncFormMain.SetCurrentPokemon(6, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
+        { GuiFormMain.UpdateCurrentPokemon(6, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
 
         private void PlayerPartySlot2_Click(object sender, EventArgs e)
-        { FuncFormMain.SetCurrentPokemon(7, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
+        { GuiFormMain.UpdateCurrentPokemon(7, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
 
         private void PlayerPartySlot3_Click(object sender, EventArgs e)
-        { FuncFormMain.SetCurrentPokemon(8, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
+        { GuiFormMain.UpdateCurrentPokemon(8, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
 
         private void PlayerPartySlot4_Click(object sender, EventArgs e)
-        { FuncFormMain.SetCurrentPokemon(9, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
+        { GuiFormMain.UpdateCurrentPokemon(9, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
 
         private void PlayerPartySlot5_Click(object sender, EventArgs e)
-        { FuncFormMain.SetCurrentPokemon(10, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
+        { GuiFormMain.UpdateCurrentPokemon(10, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
 
         private void PlayerPartySlot6_Click(object sender, EventArgs e)
-        { FuncFormMain.SetCurrentPokemon(11, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
+        { GuiFormMain.UpdateCurrentPokemon(11, PokemonPanel1Sprites, PokemonPanel1Text, PokemonPanel2Text, PokemonPanel3Text, PokemonPanel4Text); }
 
         //Battle Video Pokemon Tab End
 
@@ -120,155 +104,13 @@ namespace Vs_Recorder_Tool
 
         //Battle Video Manager Tab
         private void VideoManagerFileButton_Click(object sender, EventArgs e)
-        {SaveReader.OpenUserFile(VideoRadioButtons, BattlePartySlots);}
+        {FuncFormMain.OpenFileButton_Action(VideoRadioButtons, BattlePartySlots, FileButtons);}
 
         private void VideoManagerExportButton_Click(object sender, EventArgs e)
-        { SaveReader.ExportBattleVideo(Functions.CurrentBattleVideo);}
+        { FileHandlers.ExportBattleVideo(Functions.CurrentBattleVideo);}
 
 
         //Battle Video Manager Tab End
-
-
-
-        //Box Upload Viewer Tab
-        private void BoxUploadPokemon1_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(0);}
-
-        private void BoxUploadPokemon2_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(1);}
-
-        private void BoxUploadPokemon3_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(2);}
-
-        private void BoxUploadPokemon4_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(3);}
-
-        private void BoxUploadPokemon5_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(4);}
-
-        private void BoxUploadPokemon6_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(5);}
-
-        private void BoxUploadPokemon7_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(6);}
-
-        private void BoxUploadPokemon8_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(7);}
-
-        private void BoxUploadPokemon9_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(8);}
-
-        private void BoxUploadPokemon10_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(9);}
-
-        private void BoxUploadPokemon11_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(10);}
-
-        private void BoxUploadPokemon12_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(11);}
-
-        private void BoxUploadPokemon13_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(12);}
-
-        private void BoxUploadPokemon14_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(13);}
-
-        private void BoxUploadPokemon15_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(14);}
-
-        private void BoxUploadPokemon16_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(15);}
-
-        private void BoxUploadPokemon17_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(16);}
-
-        private void BoxUploadPokemon18_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(17);}
-
-        private void BoxUploadPokemon19_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(18);}
-
-        private void BoxUploadPokemon20_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(19);}
-
-        private void BoxUploadPokemon21_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(20);}
-
-        private void BoxUploadPokemon22_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(21);}
-
-        private void BoxUploadPokemon23_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(22);}
-
-        private void BoxUploadPokemon24_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(23);}
-
-        private void BoxUploadPokemon25_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(24);}
-
-        private void BoxUploadPokemon26_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(25);}
-
-        private void BoxUploadPokemon27_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(26);}
-
-        private void BoxUploadPokemon28_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(27);}
-
-        private void BoxUploadPokemon29_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(28);}
-
-        private void BoxUploadPokemon30_Click(object sender, EventArgs e)
-        {SetCurrentBoxUploadPokemon(29);}
-
-        //Opens the Box Upload Data file and loads the data.
-        private void BoxUploadOpenFileButton_Click(object sender, EventArgs e)
-        {
-            /*
-            BoxUpload.OpenBoxUploadFile();
-            BoxUploadBoxName.Text = Functions.BoxName;
-            BoxUploadPokemon1.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[0].SpeciesID, Functions.BoxUploadList[0].FormeByte);
-            BoxUploadPokemon2.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[1].SpeciesID, Functions.BoxUploadList[1].FormeByte);
-            BoxUploadPokemon3.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[2].SpeciesID, Functions.BoxUploadList[2].FormeByte);
-            BoxUploadPokemon4.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[3].SpeciesID, Functions.BoxUploadList[3].FormeByte);
-            BoxUploadPokemon5.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[4].SpeciesID, Functions.BoxUploadList[4].FormeByte);
-            BoxUploadPokemon6.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[5].SpeciesID, Functions.BoxUploadList[5].FormeByte);
-            BoxUploadPokemon7.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[6].SpeciesID, Functions.BoxUploadList[6].FormeByte);
-            BoxUploadPokemon8.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[7].SpeciesID, Functions.BoxUploadList[7].FormeByte);
-            BoxUploadPokemon9.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[8].SpeciesID, Functions.BoxUploadList[8].FormeByte);
-            BoxUploadPokemon10.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[9].SpeciesID, Functions.BoxUploadList[9].FormeByte);
-            BoxUploadPokemon11.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[10].SpeciesID, Functions.BoxUploadList[10].FormeByte);
-            BoxUploadPokemon12.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[11].SpeciesID, Functions.BoxUploadList[11].FormeByte);
-            BoxUploadPokemon13.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[12].SpeciesID, Functions.BoxUploadList[12].FormeByte);
-            BoxUploadPokemon14.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[13].SpeciesID, Functions.BoxUploadList[13].FormeByte);
-            BoxUploadPokemon15.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[14].SpeciesID, Functions.BoxUploadList[14].FormeByte);
-            BoxUploadPokemon16.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[15].SpeciesID, Functions.BoxUploadList[15].FormeByte);
-            BoxUploadPokemon17.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[16].SpeciesID, Functions.BoxUploadList[16].FormeByte);
-            BoxUploadPokemon18.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[17].SpeciesID, Functions.BoxUploadList[17].FormeByte);
-            BoxUploadPokemon19.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[18].SpeciesID, Functions.BoxUploadList[18].FormeByte);
-            BoxUploadPokemon20.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[19].SpeciesID, Functions.BoxUploadList[19].FormeByte);
-            BoxUploadPokemon21.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[20].SpeciesID, Functions.BoxUploadList[20].FormeByte);
-            BoxUploadPokemon22.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[21].SpeciesID, Functions.BoxUploadList[21].FormeByte);
-            BoxUploadPokemon23.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[22].SpeciesID, Functions.BoxUploadList[22].FormeByte);
-            BoxUploadPokemon24.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[23].SpeciesID, Functions.BoxUploadList[23].FormeByte);
-            BoxUploadPokemon25.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[24].SpeciesID, Functions.BoxUploadList[24].FormeByte);
-            BoxUploadPokemon26.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[25].SpeciesID, Functions.BoxUploadList[25].FormeByte);
-            BoxUploadPokemon27.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[26].SpeciesID, Functions.BoxUploadList[26].FormeByte);
-            BoxUploadPokemon28.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[27].SpeciesID, Functions.BoxUploadList[27].FormeByte);
-            BoxUploadPokemon29.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[28].SpeciesID, Functions.BoxUploadList[28].FormeByte);
-            BoxUploadPokemon30.Image = FuncPokemonSprites.MenuSpritePath(Functions.BoxUploadList[29].SpeciesID, Functions.BoxUploadList[29].FormeByte);
-            */
-        }
-
-        
-        //Sets the current Box Upload Pokemon preview.
-        public void SetCurrentBoxUploadPokemon(int CurrentPokemon)
-        {
-            //BoxUploadFrontSprite.Image = PokemonSprites.FrontSprite(Functions.BoxUploadList[CurrentPokemon]);
-            BoxUploadSpeciesTextBox.Text = Functions.BoxUploadList[CurrentPokemon].Species;
-        }
-        
-        //Box Upload Viewer Tab
 
 
 
@@ -276,41 +118,75 @@ namespace Vs_Recorder_Tool
         //Calculates RNG calls based on the given seed
         private void Button1_Click(object sender, EventArgs e)
         {
-            int Counter = 0;
-            byte[] CurrentSeedBytes = { 0, 0, 0, 0 };
             uint Magic1 = 0x41C64E6D;
             uint Magic2 = 0x6073;
             uint CurrentSeed = Convert.ToUInt32(textBox1.Text);
 
-            richTextBox2.Text = "";
+            richTextBox1.Text = "";
 
-            while (Counter < 255)
+            for (int Counter = 0;  Counter < 255; Counter++)
             {
                 CurrentSeed = (Magic1 * CurrentSeed) + Magic2;
-                CurrentSeedBytes[3] = Convert.ToByte((CurrentSeed >> 24) & 0xFF);
-                CurrentSeedBytes[2] = Convert.ToByte((CurrentSeed >> 16) & 0xFF);
-                CurrentSeedBytes[1] = Convert.ToByte((CurrentSeed >> 8) & 0xFF);
-                CurrentSeedBytes[0] = Convert.ToByte((CurrentSeed) & 0xFF);
-                richTextBox2.AppendText(BitConverter.ToString(CurrentSeedBytes, 0, 2) + "   " + BitConverter.ToString(CurrentSeedBytes, 2, 2) + "\n");
-                Counter++;
+                richTextBox1.AppendText(CurrentSeed.ToString("X8") + "\n");
             }
         }
 
         //Converts battle video decryption keys to RNG seeds
         private void Button2_Click(object sender, EventArgs e)
         {
-            uint Seed = 0;
-            byte[] SeedBytes = { 0, 0, 0, 0 };
-            Seed = ((Convert.ToUInt32(textBox2.Text) ^ 0xFFFF) << 16) + Convert.ToUInt32(textBox2.Text);
-            SeedBytes[0] = Convert.ToByte((Seed >> 24) & 0xFF);
-            SeedBytes[1] = Convert.ToByte((Seed >> 16) & 0xFF);
-            SeedBytes[2] = Convert.ToByte((Seed >> 8) & 0xFF);
-            SeedBytes[3] = Convert.ToByte((Seed) & 0xFF);
+            uint Seed = ((Convert.ToUInt32(textBox2.Text) ^ 0xFFFF) << 16) + Convert.ToUInt32(textBox2.Text);
 
-            label6.Text = Convert.ToString(Seed);
-            label5.Text = BitConverter.ToString(SeedBytes, 0, 4);
+
+            label6.Text = Seed.ToString();
+            label5.Text = Seed.ToString("X8");
         }
 
+        //kazo rng thing
+        private void button3_Click(object sender, EventArgs e)
+        {
+            uint Magic1 = 0xEEB9EB65;
+            uint Magic2 = 0x0A3561A1;
+            uint CurrentSeed = Convert.ToUInt32(textBox3.Text);
+
+            richTextBox1.Text = "";
+
+            for (int Counter = 0; Counter < 255; Counter++)
+            {
+                CurrentSeed = (Magic1 * CurrentSeed) + Magic2;
+                richTextBox2.AppendText(CurrentSeed.ToString("X8") + "\n");
+            }
+        }
+
+        private uint rand32(uint seed)
+        {
+            seed *= 0x41C64E6D;
+            seed += 0x00006073;
+            seed &= 0xFFFFFFFF;
+            return seed;
+        }
+
+        //decryption rng seed finder
+        private void button4_Click(object sender, EventArgs e)
+        {
+            uint a1 = 0x71F8 ^ 0x8965;
+            uint a2 = 0x3077 ^ 0x6C07;
+            uint a3 = 0x8ECC ^ 0x8B65;
+            uint a4 = 0xF254 ^ 0x5D58;
+            uint a5 = 0x85EC ^ 0x9EC3;
+            uint seed = 0;
+
+            for (uint i = 0; i < 0x10000; i++)
+            {
+                seed = (a1 << 16) + i;
+                if (((rand32(seed) >> 16) == a2) && ((rand32(rand32(seed)) >> 16) == a3) && ((rand32(rand32(rand32(seed))) >> 16) == a4) && ((rand32(rand32(rand32(rand32(seed)))) >> 16) == a5))
+                {       
+                    break;
+                }
+            }
+
+            label8.Text = seed.ToString();
+            label9.Text = seed.ToString("X8");
+        }
 
         //RNG Tab End
     }

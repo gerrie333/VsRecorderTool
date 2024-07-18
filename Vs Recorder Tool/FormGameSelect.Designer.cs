@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGameSelect));
             this.GameSelectButtonPt = new System.Windows.Forms.RadioButton();
             this.GameSelectButtonHGSS = new System.Windows.Forms.RadioButton();
             this.GameSelectButtonBW = new System.Windows.Forms.RadioButton();
@@ -93,7 +94,7 @@
             this.GameSelectButtonContinue.UseVisualStyleBackColor = true;
             this.GameSelectButtonContinue.Click += new System.EventHandler(this.GameSelectButtonContinue_Click);
             // 
-            // GameSelectPopUp
+            // FormGameSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -103,7 +104,10 @@
             this.Controls.Add(this.GameSelectButtonBW);
             this.Controls.Add(this.GameSelectButtonHGSS);
             this.Controls.Add(this.GameSelectButtonPt);
-            this.Name = "GameSelectPopUp";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FormGameSelect";
             this.Text = "Save File Type";
             this.ResumeLayout(false);
             this.PerformLayout();
